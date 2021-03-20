@@ -16,8 +16,8 @@
             <div class="flex-container">
                 <button @click="addinputnodes" class="flex-item">Input+</button>
                 <button @click="removeinputnodes" class="flex-item">Input-</button>
-                <button class="flex-item">Output+</button>
-                <button class="flex-item">Output-</button>
+                <button @click="addoutputnodes" class="flex-item">Output+</button>
+                <button @click="removeoutputnodes" class="flex-item">Output-</button>
                 <input class="flex-item"></input>
                 <button class="flex-item">Save</button>
                 <button class="flex-item">Load</button>
@@ -28,9 +28,20 @@
         <!-- Middle -->
         <div class="flex-item" style="flex-grow: 50;">
             <div class="flex-container">
-                <div class="flex-item">{{ inputnodes }}</div>
+                <!-- Left Bar -->
+                <div class="flex-item">
+                    <div class="flex-container" style="flex-direction: column">
+                        <div v-for="inputnode in inputnodes" class="flex-item">{{ inputnode }}</div>
+                    </div>
+                </div>
+                <!-- Middle Content -->
                 <div class="flex-item" style="flex-grow: 50;"></div>
-                <div class="flex-item"></div>
+                <!-- Right Bar -->
+                <div class="flex-item">
+                    <div class="flex-container" style="flex-direction: column">
+                        <div v-for="outputnode in outputnodes" class="flex-item">{{ outputnode }}</div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Bot Bar -->

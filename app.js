@@ -1,23 +1,25 @@
-function addinputnodes()
-{
-  this.inputnodes.push('');
-}
+addinputnodes = function() {this.inputnodes.push('IN');}
+addoutputnodes = function() {this.outputnodes.push('OUT');}
+removeinputnodes = function() {this.inputnodes.pop();}
+removeoutputnodes = function() {this.outputnodes.pop();}
 
 function removeinputnodes()
 {
-  this.inputnodes.pop()
+    this.inputnodes.pop()
 }
 
 const vm = Vue.createApp({
   data() {
     return{
-      inputnodes: [],
-      outputnodes: []
+      inputnodes: ['IN'],
+      outputnodes: ['OUT']
     }
   },
   methods:{
     addinputnodes,
-    removeinputnodes
+    removeinputnodes,
+    addoutputnodes,
+    removeoutputnodes
   }
 })
 
