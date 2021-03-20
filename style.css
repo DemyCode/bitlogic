@@ -1,0 +1,23 @@
+* {
+    outline: 1px solid red;
+}
+
+html, body, #app {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    border: 0px;
+}
+
+.flex-container {
+    width: 100%;
+    height: 100%;
+    display: flex; /* or inline-flex */
+    align-items: stretch;
+    overflow: auto;
+}
+
+.flex-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+}

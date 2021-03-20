@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Redstone Simulator</title>
+</head>
+<body>
+    <!-- Whole Page -->
+    <div class="flex-container" style="flex-direction: column;" id="app">
+        <!-- Top Bar -->
+        <div class="flex-item">
+            <div class="flex-container">
+                <button @click="addinputnodes" class="flex-item">Input+</button>
+                <button @click="removeinputnodes" class="flex-item">Input-</button>
+                <button class="flex-item">Output+</button>
+                <button class="flex-item">Output-</button>
+                <input class="flex-item"></input>
+                <button class="flex-item">Save</button>
+                <button class="flex-item">Load</button>
+                <button class="flex-item">Import</button>
+                <button class="flex-item">Export</button>
+            </div>
+        </div>
+        <!-- Middle -->
+        <div class="flex-item" style="flex-grow: 50;">
+            <div class="flex-container">
+                <div class="flex-item">{{ inputnodes }}</div>
+                <div class="flex-item" style="flex-grow: 50;"></div>
+                <div class="flex-item"></div>
+            </div>
+        </div>
+        <!-- Bot Bar -->
+        <div class="flex-item">
+            <div class="flex-container">
+                <button class="flex-item">Not Gate</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+</html>
