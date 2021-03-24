@@ -14,10 +14,10 @@
         <!-- Top Bar -->
         <div class="flex-item">
             <div class="flex-container">
-                <button @click="addinputnodes" class="flex-item">Input+</button>
-                <button @click="removeinputnodes" class="flex-item">Input-</button>
-                <button @click="addoutputnodes" class="flex-item">Output+</button>
-                <button @click="removeoutputnodes" class="flex-item">Output-</button>
+                <button @click="addinteractor" class="flex-item">Input+</button>
+                <button @click="removeinteractor" class="flex-item">Input-</button>
+                <button @click="addoutput" class="flex-item">Output+</button>
+                <button @click="removeoutput" class="flex-item">Output-</button>
                 <input class="flex-item"></input>
                 <button class="flex-item">Save</button>
                 <button class="flex-item">Load</button>
@@ -31,11 +31,13 @@
                 <!-- Left Bar -->
                 <div class="flex-item">
                     <div class="flex-container" style="flex-direction: column">
-                        <div v-for="inputnode in inputnodes" class="flex-item">{{ inputnode }}</div>
+                        <div v-for="inputnode in inputnodes" class="flex-item"></div>
                     </div>
                 </div>
-                <!-- Middle Content -->
-                <div class="flex-item" style="flex-grow: 50;"></div>
+                <!-- Middle Content-->
+                <div class="flex-item" style="flex-grow: 50;">
+                    <div v-for="inverter in inverters" v-on:mousedown="dragged" class="inverter" v-bind:id="inverter"></div>
+                </div>
                 <!-- Right Bar -->
                 <div class="flex-item">
                     <div class="flex-container" style="flex-direction: column">
@@ -47,7 +49,7 @@
         <!-- Bot Bar -->
         <div class="flex-item">
             <div class="flex-container">
-                <button class="flex-item">Not Gate</button>
+                <button class="flex-item" @click="addinverter">Not Gate</button>
             </div>
         </div>
     </div>

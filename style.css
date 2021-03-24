@@ -19,5 +19,14 @@ html, body, #app {
 
 .flex-item {
     flex-grow: 1;
-    flex-shrink: 1;
+}
+
+.inverter {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: inherit;
+    border-left: 20px solid red;
+    position: absolute;
 }
