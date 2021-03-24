@@ -18,8 +18,8 @@ function mover(event)
   {
     let w = parseInt(getComputedStyle(draggedelement).width);
     let h = parseInt(getComputedStyle(draggedelement).height);
-    draggedelement.style.left = (event.clientX - w / 2) + "px";
-    draggedelement.style.top = (event.clientY - h / 2) + "px";
+    draggedelement.style.left = (event.pageX - w / 2) + "px";
+    draggedelement.style.top = (event.pageY - h / 2) + "px";
   }
 }
 
